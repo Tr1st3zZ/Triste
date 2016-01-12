@@ -1,5 +1,5 @@
 # Triste
-汉化脚本
+Elobuddy汉化脚本
 
 
 
