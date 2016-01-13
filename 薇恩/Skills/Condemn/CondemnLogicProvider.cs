@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
+using EloBuddy.SDK.Enumerations;
 using EloBuddy.SDK.Menu.Values;
 using iSeriesReborn.Utility.Positioning;
 using SharpDX;
@@ -61,8 +62,9 @@ namespace TDVayne.Skills.Condemn
                 {
                     continue;
                 }
-
-                var prediction = Variables.E2.GetPrediction(Hero);
+                
+                Spell.Skillshot E = new Spell.Skillshot(SpellSlot.E, 670, SkillShotType.Linear, (int) 0.25f, (int?) 1200f, (int?) 80f);
+                var prediction = Prediction.Position.PredictLinearMissile(Hero, E.Range, E.Width, E.CastDelay, E.Speed, int.MaxValue);
                 var targetPosition = prediction.UnitPosition;
                 var finalPosition = targetPosition.Extend(startPosition, -PushDistance);
                 var finalPosition_ex = Hero.ServerPosition.Extend(startPosition, -PushDistance);

@@ -44,31 +44,29 @@ namespace TDVayne.Skills.Tumble
         /// <param name="target">The target.</param>
         public void Execute(Obj_AI_Base target)
         {
-            if (target is AIHeroClient && Variables.Q.IsReady())
+            if (target is AIHeroClient)
             {
-                if (target.IsValidTarget())
+                var targetHero = target as AIHeroClient;
+                if (targetHero.IsValidTarget())
                 {
                     //If the Harass mode is agressive and the target has 1 W Stacks + 1 for current AA then we Q for the third.
                     if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass)
-                        && target.GetWBuff().Count != 1
+                        && targetHero.GetWBuff().Count != 1
                         && MenuGenerator.HarassMenu["TDVaynemixedmode"].Cast<Slider>().CurrentValue == 1)
-                    {
                         return;
-                    }
-
+                    
                     //If they are autoattacking or winding up and Harass mode is passive we AA them then Q backwards.
                     if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass)
                         && MenuGenerator.HarassMenu["TDVaynemixedmode"].Cast<Slider>().CurrentValue == 0
-                        && (target.Spellbook.IsAutoAttacking || target.Spellbook.IsAutoAttacking)
+                        && (targetHero.Spellbook.IsAutoAttacking || targetHero.Spellbook.IsAutoAttacking)
                         && AutoAttacks.IsAutoAttack(target.LastCastedSpellName())
                         && target.LastCastedSpellTarget().IsValid && target.LastCastedSpellTarget() is AIHeroClient)
                     {
                         var backwardsPosition = ObjectManager.Player.ServerPosition.Extend(target.ServerPosition, -300f);
                         if (backwardsPosition.To3D().IsSafe())
                         {
-                            CastTumble(backwardsPosition.To3D(), target);
+                            CastTumble(backwardsPosition.To3D(), targetHero);
                         }
-
                         return;
                     }
 
@@ -77,7 +75,7 @@ namespace TDVayne.Skills.Tumble
                         var position = Provider.GetTDVayneQPosition();
                         if (position != Vector3.Zero)
                         {
-                            CastTumble(position, target);
+                            CastTumble(position, targetHero);
                         }
                     }
                     else
@@ -85,7 +83,7 @@ namespace TDVayne.Skills.Tumble
                         var position = ObjectManager.Player.ServerPosition.Extend(Game.CursorPos, 300f);
                         if (position.To3D().IsSafe())
                         {
-                            CastTumble(position.To3D(), target);
+                            CastTumble(position.To3D(), targetHero);
                         }
                     }
                 }

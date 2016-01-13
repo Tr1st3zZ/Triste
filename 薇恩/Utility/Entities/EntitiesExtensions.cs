@@ -20,7 +20,7 @@ namespace TDVayne.Utility.Entities
         /// </summary>
         /// <param name="target">The target.</param>
         /// <returns></returns>
-        public static BuffInstance GetWBuff(this Obj_AI_Base target)
+        public static BuffInstance GetWBuff(this AIHeroClient target)
         {
             return target.Buffs.FirstOrDefault(bu => bu.Name == "vaynesilvereddebuff");
         }

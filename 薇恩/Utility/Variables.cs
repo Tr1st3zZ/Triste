@@ -19,9 +19,7 @@ namespace TDVayne.Utility
         ///     The spells dictionary
         /// </summary>
         public static Spell.Active Q = new Spell.Active(SpellSlot.Q);
-
         public static Spell.Targeted E = new Spell.Targeted(SpellSlot.E, 590);
-        public static Spell.Skillshot E2 = new Spell.Skillshot(SpellSlot.E, 590, SkillShotType.Linear);
         public static Spell.Active R = new Spell.Active(SpellSlot.R);
 
         /// <summary>

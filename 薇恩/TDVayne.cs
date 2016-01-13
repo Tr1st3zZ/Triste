@@ -27,7 +27,6 @@ namespace TDVayne
         /// </summary>
         public TDVayne()
         {
-            Variables.E2.CastDelay = (int) 0.5;
             Game.OnUpdate += OnUpdate;
             Drawing.OnDraw += OnDraw;
 
@@ -82,13 +81,11 @@ namespace TDVayne
                     if (skill.GetSkillMode() == SkillMode.OnAfterAA)
                     {
                         if ((Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo) ||
-                             Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass)) &&
-                            args.Target is AIHeroClient)
+                             Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass)) && args.Target != null)
                         {
                             skill.Execute(args.Target as Obj_AI_Base);
                         }
-                        if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear) &&
-                            !(args.Target is AIHeroClient))
+                        if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear) && args.Target != null)
                         {
                             skill.ExecuteFarm(args.Target as Obj_AI_Base);
                         }
@@ -122,8 +119,8 @@ namespace TDVayne
                 {
                     if (skill.GetSkillMode() == SkillMode.OnUpdate)
                     {
-                        skill.Execute(Orbwalker.GetTarget() is AIHeroClient
-                            ? Orbwalker.GetTarget() as AIHeroClient
+                        skill.Execute(Orbwalker.GetTarget() is Obj_AI_Base
+                            ? Orbwalker.GetTarget() as Obj_AI_Base
                             : null);
                     }
                 }
