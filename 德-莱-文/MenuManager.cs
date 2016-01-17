@@ -58,7 +58,7 @@ namespace AkaDraven
         {
             AxeMenu = YMenu.AddSubMenu("斧-头-设-置", "Axesettings");
             AxeMenu.AddGroupLabel("斧-头-设-置");
-            AxeMenu.AddLabel("1: 连招 2: 当按下-空格,V,C,X 3: 怎样都接");
+            AxeMenu.AddLabel("1: 连招 2: 当按下-空格,V,C,X 3: 任何情况");
             AxeMenu.Add("Qmode", new Slider("接斧头模式:", 3, 1, 3));
             AxeMenu.Add("Qrange", new Slider("接斧头范围:", 800, 120, 1500));
             AxeMenu.Add("Qmax", new Slider("最多斧头:", 2, 1, 3));
