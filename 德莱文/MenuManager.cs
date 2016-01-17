@@ -40,24 +40,24 @@ namespace AkaDraven
 
         public static void Mainmenu()
         {
-            YMenu = MainMenu.AddMenu("德-莱-文", "akasdraven");
-            YMenu.AddGroupLabel("德-莱-文：如果你想食屎，我成全你 :"3)");
+            YMenu = MainMenu.AddMenu("德莱文", "akasdraven");
+            YMenu.AddGroupLabel("德莱文：如果你想食屎，我成全你 :3 ");
         }
 
         public static void Combomenu()
         {
-            ComboMenu = YMenu.AddSubMenu("连-招", "Combo");
-            ComboMenu.AddGroupLabel("连-招");
-            ComboMenu.Add("Q", new CheckBox("使用-Q"));
-            ComboMenu.Add("W", new CheckBox("使用-W"));
-            ComboMenu.Add("E", new CheckBox("使用-E"));
-            ComboMenu.Add("R", new CheckBox("使用-R"));
+            ComboMenu = YMenu.AddSubMenu("连招", "Combo");
+            ComboMenu.AddGroupLabel("连招");
+            ComboMenu.Add("Q", new CheckBox("使用 Q"));
+            ComboMenu.Add("W", new CheckBox("使用 W"));
+            ComboMenu.Add("E", new CheckBox("使用 E"));
+            ComboMenu.Add("R", new CheckBox("使用 R"));
         }
 
         public static void Axemenu()
         {
-            AxeMenu = YMenu.AddSubMenu("斧-头-设-置", "Axesettings");
-            AxeMenu.AddGroupLabel("斧-头-设-置");
+            AxeMenu = YMenu.AddSubMenu("斧头设置", "Axesettings");
+            AxeMenu.AddGroupLabel("斧头设置");
             AxeMenu.AddLabel("1: 连招 2: 当按下-空格,V,C,X 3: 任何情况");
             AxeMenu.Add("Qmode", new Slider("接斧头模式:", 3, 1, 3));
             AxeMenu.Add("Qrange", new Slider("接斧头范围:", 800, 120, 1500));
@@ -68,38 +68,38 @@ namespace AkaDraven
 
         public static void Harassmenu()
         {
-            HarassMenu = YMenu.AddSubMenu("骚-扰", "Harass");
-            HarassMenu.Add("E", new CheckBox("使用-E"));
+            HarassMenu = YMenu.AddSubMenu("骚扰", "Harass");
+            HarassMenu.Add("E", new CheckBox("使用 E"));
             HarassMenu.Add("AutoE", new KeyBind("自动骚扰切换键", true, KeyBind.BindTypes.PressToggle, 'G'));
         }
 
         public static void Fleemenu()
         {
             FleeMenu = YMenu.AddSubMenu("逃-跑", "Flee");
-            FleeMenu.Add("E", new CheckBox("使用-E"));
-            FleeMenu.Add("W", new CheckBox("使用-W"));
+            FleeMenu.Add("E", new CheckBox("使用E"));
+            FleeMenu.Add("W", new CheckBox("使用W"));
         }
 
         public static void LaneClearmenu()
         {
-            LaneClearMenu = YMenu.AddSubMenu("清-兵", "LaneClear");
-            LaneClearMenu.Add("Q", new CheckBox("使用-Q"));
-            LaneClearMenu.Add("W", new CheckBox("使用-W"));
+            LaneClearMenu = YMenu.AddSubMenu("清兵", "LaneClear");
+            LaneClearMenu.Add("Q", new CheckBox("使用Q"));
+            LaneClearMenu.Add("W", new CheckBox("使用W"));
             LaneClearMenu.Add("Mana", new Slider("蓝量控制", 50));
         }
 
         public static void KillStealmenu()
         {
-            KillStealMenu = YMenu.AddSubMenu("抢-人-头", "KillSteal");
-            KillStealMenu.Add("KsE", new CheckBox("使用-E"));
-            KillStealMenu.Add("KsIgnite", new CheckBox("使用-点燃"));
+            KillStealMenu = YMenu.AddSubMenu("抢人头", "KillSteal");
+            KillStealMenu.Add("KsE", new CheckBox("使用E"));
+            KillStealMenu.Add("KsIgnite", new CheckBox("使用点燃"));
         }
 
         public static void Miscmenu()
         {
-            MiscMenu = YMenu.AddSubMenu("杂-项", "Misc");
+            MiscMenu = YMenu.AddSubMenu("杂项", "Misc");
             MiscMenu.Add("UseEInterrupt", new CheckBox("使用 E 打断技能"));
-            MiscMenu.Add("UseWInstant", new CheckBox("瞬间使用 W(如果无冷却)", false));
+            MiscMenu.Add("UseWInstant", new CheckBox("瞬间使用 W【如果无冷却】", false));
             MiscMenu.Add("UseWSlow", new CheckBox("如果被减速，则使用W"));
             MiscMenu.Add("WMana", new Slider("W 蓝量控制", 50));
             MiscMenu.Add("autolvl", new CheckBox("开启自动升级"));
@@ -107,8 +107,8 @@ namespace AkaDraven
 
         public static void Drawingmenu()
         {
-            DrawingMenu = YMenu.AddSubMenu("显-示-设-置", "Drawing");
-            DrawingMenu.Add("DrawE", new CheckBox("画出-E"));
+            DrawingMenu = YMenu.AddSubMenu("显示设置", "Drawing");
+            DrawingMenu.Add("DrawE", new CheckBox("画出E"));
             DrawingMenu.Add("DrawAxe", new CheckBox("画出斧子"));
             DrawingMenu.Add("DrawAxeRange", new CheckBox("画出斧子抓取范围"));
         }
