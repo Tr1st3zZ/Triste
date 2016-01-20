@@ -534,7 +534,7 @@ namespace AutoSpellUp
                     }
                     else
                     {
-                        AbilitySequence = new[] { 2, 3, 3, 2, 3, 4, 3, 2, 3, 2, 4, 2, 4, 1, 1, 1, 1, 1 };
+                        AbilitySequence = new[] { 2, 1, 3, 2, 2, 4, 2, 3, 3, 3, 4, 3, 3, 1, 1, 4, 1, 1 };
                         Tipo = " AD";
                     }
                     break;
@@ -567,7 +567,7 @@ namespace AutoSpellUp
                     }
                     else
                     {
-                        AbilitySequence = new[] { 1, 3, 2, 1, 1, 4, 1, 2, 1, 2, 4, 2, 2, 3, 3, 4, 3, 3 };
+                        AbilitySequence = new[] { 1, 3, 2, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3 };
                         Tipo = " Lane";
                     }
                     break;
