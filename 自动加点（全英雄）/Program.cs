@@ -136,12 +136,12 @@ namespace AutoSpellUp
                 case "Ezreal":
                     if (heal != null && heal.Slot != SpellSlot.Unknown)
                     {
-                        AbilitySequence = new[] { 1, 3, 1, 2, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
+                        AbilitySequence = new[] { 1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
                         Tipo = " AD";
                     }
                     else
                     {
-                        AbilitySequence = new[] { 1, 2, 3, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3 };
+                        AbilitySequence = new[] { 1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2 };
                         Tipo = " AP";
                     }
                     break;
